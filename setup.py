@@ -1,28 +1,20 @@
 from setuptools import setup, find_packages
 
+with open("requirements.txt") as f:
+    required = f.read().splitlines()
+
 setup(
-    name='flair',
-    version='0.3.2',
-    description='A very simple framework for state-of-the-art NLP',
-    long_description=open("README.md", encoding='utf-8').read(),
+    name="flair",
+    version="0.4.4",
+    description="A very simple framework for state-of-the-art NLP",
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    author='Alan Akbik',
-    author_email='alan.akbik@zalando.de',
-    url='https://github.com/zalandoresearch/flair',
-    packages=find_packages(exclude='test'),  # same as name
-    license='MIT',
-    install_requires=[
-        'torch==0.4.1',
-        'gensim==3.4.0',
-        'typing==3.6.4',
-        'tqdm==4.26.0',
-        'segtok==1.5.7',
-        'matplotlib==3.0.0',
-        'mpld3==0.3',
-        'sklearn',
-        'sqlitedict==1.6.0',
-        'deprecated==1.2.4',
-    ],
+    author="Alan Akbik",
+    author_email="alan.akbik@zalando.de",
+    url="https://github.com/zalandoresearch/flair",
+    packages=find_packages(exclude="tests"),  # same as name
+    license="MIT",
+    install_requires=required,
     include_package_data=True,
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
